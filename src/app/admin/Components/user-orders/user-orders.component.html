@@ -1,0 +1,25 @@
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Item ID</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderList">
+          <td>{{ order.orderId }}</td>
+          <td>{{ order.itemId }}</td>
+          <td>{{ order.itemName }}</td>
+          <td>{{ order.itemPrice | currency:'INR' }}</td>
+          <td>
+            <button  class="btn btn-success" (click)="AcceptOrders(order.orderId)">Accept</button>
+            <button  class="btn btn-danger ms-2" (click)="RejectOrders(order.orderId)">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
